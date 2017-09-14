@@ -1,0 +1,18 @@
+  <h1>{{ title }}</h1>
+  <form (ngSubmit)="save()">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="nome" required [(ngModel)]="employee.nome" name='nome'>
+    </div>
+    <div class="form-group">
+      <label for="text">Sobrenome</label>
+      <input type="text" class="form-control" id="sobrenome" required [(ngModel)]="employee.sobrenome" name='sobrenome'>
+    </div>
+    <div class="form-group">
+      <label for="text">Participação</label>
+      <input type="number" class="form-control" id="part" required [(ngModel)]="employee.part" name='part'>
+    </div>
+    <button type="submit" class="btn btn-default">Enviar</button>
+  </form>
+  <hr />
+  <a routerLink="/">Back to Employees</a>

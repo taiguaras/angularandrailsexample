@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        Displaying {{ employees.length }} employees.
+      </p>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th data-field="name">Nome</th>
+            <th data-field="name">Sobrenome</th>
+            <th data-field="name">Participação</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let e of employees">
+            <td>{{ e.nome }}</td>
+            <td>{{ e.sobrenome }}</td>
+            <td>{{ e.part }}%</td>
+
+            <td>
+              <a [routerLink]="['/employees', e.id]">
+          Editar
+        </a>
+            </td>
+            <td>
+              <a (click)="deleteEmployee(e)" href="">
+          Deletar
+        </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a routerLink="/employees/new">Adicionar</a>
+    </div>
+
+
+    <div class="col-md-6">
+      <p>Displaying {{ employees.length }} employees.</p> 
+      <app-employee-form> </app-employee-form>
+    </div>
+  </div>
+
+
+  
+</div>
